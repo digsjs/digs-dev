@@ -3,7 +3,7 @@
 let fs = require('fs'),
   path = require('path');
 
-module.exports = function dev(cwd) {
+function dev(cwd) {
 
   let pkg = require('./package.json');
   let config = pkg.config['digs-dev'],
@@ -49,3 +49,10 @@ module.exports = function dev(cwd) {
   }
 
 };
+
+module.exports = dev;
+
+if (require.main === module) {
+  dev(process.argv[2]);
+}
+
