@@ -31,6 +31,9 @@ function dev(cwd) {
       } catch (ignored) {}
     }
     src = path.join(__dirname, src);
+    if (!fs.existsSync(src)) {
+      throw new Error('digs-dev: source file "%s" does not exist!');
+    }
     try {
       fs.symlinkSync(src, dest);
       console.log('Symlinked %s => %s',
