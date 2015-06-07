@@ -1,6 +1,6 @@
 {
   "name": "digs-dev",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Common development dependencies for digs",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
     "chai": "^2.3.0",
+    "debug": "^2.2.0",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.3.1",
     "grunt-cli": "^0.1.13",
