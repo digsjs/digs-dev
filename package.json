@@ -23,6 +23,7 @@
     "grunt-mocha-cov": "^0.4.0",
     "jit-grunt": "^0.9.1",
     "load-grunt-config": "^0.17.1",
+    "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
@@ -35,8 +36,12 @@
         ".eslintignore",
         ".eslintrc",
         "Gruntfile.js",
-        "grunt",
-        "test/fixture.js"
+        "grunt/bump.yaml",
+        "grunt/devUpdate.yaml",
+        "grunt/mochacov.yaml",
+        "grunt/testfile.js",
+        "test/fixture.js",
+        "test/.eslintrc"
       ]
     }
   }

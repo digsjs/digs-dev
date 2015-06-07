@@ -1,6 +1,7 @@
 'use strict';
 
 let fs = require('fs'),
+  mkdirp = require('mkdirp'),
   path = require('path');
 
 function dev(cwd) {
@@ -22,6 +23,12 @@ function dev(cwd) {
       fs.unlinkSync(dest);
     }
     catch (ignored) {
+    }
+    let dir = path.dirname(src);
+    if (dir !== '.') {
+      try {
+        mkdirp.sync(dir);
+      } catch (ignored) {}
     }
     src = path.join(__dirname, src);
     try {
