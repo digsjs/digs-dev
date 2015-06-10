@@ -41,6 +41,7 @@
   },
   "globals": {
     "Promise": true,
-    "expect": true
+    "expect": true,
+    "sinon": true
   }
 }
