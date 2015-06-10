@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
+    "bluebird": "^2.9.27",
     "chai": "^2.3.0",
     "debug": "^2.2.0",
     "grunt": "^0.4.5",
