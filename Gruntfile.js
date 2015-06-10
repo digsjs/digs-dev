@@ -62,7 +62,8 @@ module.exports = function (grunt) {
       staticMappings: {
         devUpdate: 'grunt-dev-update',
         'bump-only': 'grunt-bump',
-        'bump-commit': 'grunt-bump'
+        'bump-commit': 'grunt-bump',
+        'mochacov': 'grunt-mocha-cov'
       }
     },
     data: data
