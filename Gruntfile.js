@@ -63,6 +63,7 @@ module.exports = function (grunt) {
         devUpdate: 'grunt-dev-update',
         'bump-only': 'grunt-bump',
         'bump-commit': 'grunt-bump',
+        mochaTest: 'grunt-mocha-test'
       }
     },
     data: data
