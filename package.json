@@ -14,23 +14,23 @@
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
     "bluebird": "^2.9.27",
-    "chai": "^2.3.0",
+    "chai": "^3.0.0",
     "debug": "^2.2.0",
+    "eslint": "^0.24.0",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.3.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-dev-update": "^1.3.0",
-    "grunt-eslint": "^14.0.0",
+    "grunt-eslint": "^16.0.0",
     "grunt-mocha-test": "^0.12.7",
     "jit-grunt": "^0.9.1",
     "load-grunt-config": "^0.17.1",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0",
-    "time-grunt": "^1.2.1",
-    "eslint": "^0.22.1"
+    "sinon-chai": "^2.8.0",
+    "time-grunt": "^1.2.1"
   },
   "config": {
     "digs-dev": {
@@ -41,7 +41,7 @@
         "Gruntfile.js",
         "grunt/bump.yaml",
         "grunt/devUpdate.yaml",
-        "grunt/mochacov.yaml",
+        "grunt/mochaTest.yaml",
         "grunt/testfile.js",
         "test/fixture.js",
         "test/.eslintrc"
