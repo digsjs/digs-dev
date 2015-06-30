@@ -1,7 +1,7 @@
 'use strict';
 
-var chai = require('chai'),
-  Promise = require('bluebird');
+let chai = require('chai');
+let Promise = require('bluebird');
 
 global.expect = chai.expect;
 global.sinon = require('sinon');

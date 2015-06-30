@@ -2,7 +2,7 @@
 
 module.exports = function (grunt) {
 
-  var path = require('path');
+  let path = require('path');
 
   function assert(target) {
     if (!target) {
@@ -29,17 +29,21 @@ module.exports = function (grunt) {
       var args = Array.prototype.slice.call(arguments);
 
       function configure(target) {
-        var config = {
-            watch: {}
-          },
-          isDir = grunt.file.isDir(target),
-          testFilepath = getTestFilepath(target),
-          files =
-            isDir ?
-              [path.join(target, '**/*.js'),
-                testFilepath] :
-              [target,
-                testFilepath];
+        let config = {
+          watch: {}
+        };
+        let isDir = grunt.file.isDir(target);
+        let testFilepath = getTestFilepath(target);
+        let files =
+          isDir ?
+            [
+              path.join(target, '**/*.js'),
+              testFilepath
+            ] :
+            [
+              target,
+              testFilepath
+            ];
 
         config.watch[target] = {
           files: files,
@@ -67,11 +71,11 @@ module.exports = function (grunt) {
     var args = Array.prototype.slice.call(arguments);
 
     function configure(target) {
-      var config = {
-          eslint: {},
-          mochacov: {}
-        },
-        testFilepath = getTestFilepath(target);
+      let config = {
+        eslint: {},
+        mochacov: {}
+      };
+      let testFilepath = getTestFilepath(target);
 
       config.eslint[target] = [target, testFilepath];
       config.mochacov[target] = testFilepath;
