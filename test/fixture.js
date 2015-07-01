@@ -1,7 +1,6 @@
 'use strict';
 
 let chai = require('chai');
-let Promise = require('bluebird');
 
 global.expect = chai.expect;
 global.sinon = require('sinon');
@@ -9,4 +8,4 @@ global.sinon = require('sinon');
 chai.use(require('sinon-chai'));
 chai.use(require('chai-as-promised'));
 
-Promise.longStackTraces();
+require('bluebird').longStackTraces();

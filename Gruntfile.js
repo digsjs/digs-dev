@@ -1,33 +1,18 @@
-/* eslint-env node */
-
 'use strict';
 
 module.exports = function (grunt) {
-  var loadGruntConfig = require('load-grunt-config');
-  var pkg = grunt.file.readJSON('package.json'),
+  let loadGruntConfig = require('load-grunt-config');
+  let pkg = grunt.file.readJSON('package.json');
 
-    /**
-     * Random bits of crap to send to the Grunt templates
-     * @type {{pkg: Object, bower: ?Object, min: Function, author: *}}
-     */
-    data = {
-      pkg: pkg,
-      bower: grunt.file.isFile('bower.json') &&
-      grunt.file.readJSON('bower.json'),
-
-      /**
-       * Dumb little function to generate a foo.min.ext filename from foo.ext
-       * @param {string} filepath Filepath
-       * @returns {string} Minified filepath
-       */
-      min: function min(filepath) {
-        var path = require('path');
-        var ext = path.extname(filepath);
-        return path.basename(filepath, ext) + '.min' + ext;
-      },
-      author: typeof pkg.author === 'string' ? pkg.author :
-        [pkg.author.name, pkg.author.email].join(' ')
-    };
+  /**
+   * Random bits of crap to send to the Grunt templates
+   * @type {{pkg: Object, bower: ?Object, min: Function, author: *}}
+   */
+  let data = {
+    pkg: pkg,
+    author: typeof pkg.author === 'string' ? pkg.author :
+      [pkg.author.name, pkg.author.email].join(' ')
+  };
 
   Object.defineProperty(data, 'author', {
     /**
@@ -63,9 +48,18 @@ module.exports = function (grunt) {
         devUpdate: 'grunt-dev-update',
         'bump-only': 'grunt-bump',
         'bump-commit': 'grunt-bump',
-        mochaTest: 'grunt-mocha-test'
+        'mocha_istanbul': 'grunt-mocha-istanbul'
       }
     },
     data: data
+  });
+
+  grunt.event.on('coverage', function (lcovData, done) {
+
+    require('codacy-coverage').handleInput(lcovData)
+      .then(function () {
+        grunt.log.ok('Coverage data sent to Codacy.');
+      })
+      .finally(done);
   });
 };
