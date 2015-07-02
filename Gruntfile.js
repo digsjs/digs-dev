@@ -3,6 +3,13 @@
 module.exports = function (grunt) {
   let loadGruntConfig = require('load-grunt-config');
   let pkg = grunt.file.readJSON('package.json');
+  let digsDevPkg;
+  try {
+    digsDevPkg = grunt.file.readJSON('node_modules/digs-dev/package.json');
+  }
+  catch (ignored) {
+    digsDevPkg = pkg;
+  }
 
   /**
    * Random bits of crap to send to the Grunt templates
@@ -12,7 +19,7 @@ module.exports = function (grunt) {
     pkg: pkg,
     author: typeof pkg.author === 'string' ? pkg.author :
       [pkg.author.name, pkg.author.email].join(' '),
-    digsDevPkg: grunt.file.readJSON('node_modules/digs-dev/package.json')
+    digsDevPkg: digsDevPkg
   };
 
   Object.defineProperty(data, 'author', {
