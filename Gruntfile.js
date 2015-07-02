@@ -11,7 +11,8 @@ module.exports = function (grunt) {
   let data = {
     pkg: pkg,
     author: typeof pkg.author === 'string' ? pkg.author :
-      [pkg.author.name, pkg.author.email].join(' ')
+      [pkg.author.name, pkg.author.email].join(' '),
+    digsDevPkg: grunt.file.readJSON('node_modules/digs-dev/package.json')
   };
 
   Object.defineProperty(data, 'author', {
@@ -41,6 +42,8 @@ module.exports = function (grunt) {
   if (grunt.option('time')) {
     require('time-grunt')(grunt);
   }
+
+  grunt.registerTask('watch-digs-dev', ['concurrent:watch-digs-dev']);
 
   loadGruntConfig(grunt, {
     jitGrunt: {

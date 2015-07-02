@@ -11,6 +11,7 @@
   "bugs": {
     "url": "https://github.com/digsjs/digs/issues"
   },
+  "main": "lib/index.js",
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
     "bluebird": "^2.9.30",
@@ -23,6 +24,7 @@
     "grunt": "^0.4.5",
     "grunt-bump": "^0.3.1",
     "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^2.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-dev-update": "^1.3.0",
     "grunt-eslint": "^16.0.0",
@@ -34,7 +36,11 @@
     "mocha": "^2.2.5",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.1",
+    "yargs": "^3.14.0"
+  },
+  "bin": {
+    "digs-dev": "./bin/digs-dev.js"
   },
   "config": {
     "digs-dev": {
@@ -42,13 +48,16 @@
         ".editorconfig",
         ".eslintignore",
         ".eslintrc",
-        "Gruntfile.js",
         "grunt/bump.yaml",
+        "grunt/concurrent.yaml",
         "grunt/devUpdate.yaml",
+        "grunt/digs-dev.js",
         "grunt/mocha_istanbul.yaml",
         "grunt/testfile.js",
-        "test/fixture.js",
-        "test/.eslintrc"
+        "grunt/watch.yaml",
+        "Gruntfile.js",
+        "test/.eslintrc",
+        "test/fixture.js"
       ]
     }
   }

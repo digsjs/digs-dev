@@ -1,0 +1,27 @@
+digs-dev-modules:
+  files:
+    - node_modules
+  tasks:
+    - digs-dev:symlink
+  options:
+    cwd:
+      files: node_modules/digs-dev
+
+digs-dev-files:
+  files: <%= digsDevPkg.config['digs-dev'].symlink %>
+  tasks:
+    - digs-dev:symlink
+  options:
+    events:
+      - added
+    cwd:
+      files: node_modules/digs-dev
+
+digs-dev-package:
+  files: package.json
+  tasks:
+    - digs-dev:symlink
+  options:
+    cwd:
+      files: node_modules/digs-dev
+    reload: true
