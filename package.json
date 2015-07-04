@@ -11,6 +11,9 @@
   "bugs": {
     "url": "https://github.com/digsjs/digs/issues"
   },
+  "scripts": {
+    "test": "grunt test"
+  },
   "main": "lib/index.js",
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
