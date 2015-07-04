@@ -64,12 +64,4 @@ module.exports = function (grunt) {
     data: data
   });
 
-  grunt.event.on('coverage', function (lcovData, done) {
-
-    require('codacy-coverage').handleInput(lcovData)
-      .then(function () {
-        grunt.log.ok('Coverage data sent to Codacy.');
-      })
-      .finally(done);
-  });
 };
