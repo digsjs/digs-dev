@@ -1,6 +1,6 @@
 {
   "name": "digs-dev",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Common development dependencies for digs",
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "load-grunt-config": "^0.17.1",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
+    "rewire": "^2.3.4",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0",
     "time-grunt": "^1.2.1",
