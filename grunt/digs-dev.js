@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       let digsDev = require('../lib');
       if (digsDev[command]) {
         return Promise.try(function () {
-          return digsDev[command].apply(null, [grunt].concat(args));
+          return digsDev[command].apply(null, args.concat(grunt));
         })
           .then(done, function (err) {
             grunt.fail.warn(err);

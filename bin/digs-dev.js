@@ -8,10 +8,18 @@ let digsDev = require('../lib');
 var argv = yargs
   .usage('Usage: $0 <command>')
   .command('symlink',
-  `Symlink digs-dev's dependencies + dotfiles into current or target directory`,
+  'Symlink digs-dev\'s dotfiles into current or target directory',
   function (yargs) {
     argv = yargs
       .usage('Usage: $0 symlink [target-dir]')
+      .help('help')
+      .alias('help', 'h')
+      .argv;
+  })
+  .command('install',
+  'Install digs-dev\'s dependencies into current or target directory',
+  function (yargs) {
+    argv = yargs.usage('Usage: $0 install [target-dir]')
       .help('help')
       .alias('help', 'h')
       .argv;
