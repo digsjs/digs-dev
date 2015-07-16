@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
 'use strict';
+
 let yargs = require('yargs');
 let path = require('path');
-let digsDev = require('../lib');
+let execute = require('../lib');
 
+// note to self: "var" is intended here
 var argv = yargs
   .usage('Usage: $0 <command>')
   .command('symlink',
-  'Symlink digs-dev\'s dotfiles into current or target directory',
+  `Symlink digs-dev's dotfiles into current or target directory`,
   function (yargs) {
     argv = yargs
       .usage('Usage: $0 symlink [target-dir]')
@@ -16,8 +18,17 @@ var argv = yargs
       .alias('help', 'h')
       .argv;
   })
+  .command('upgrade',
+  `Install/upgrades digs-dev's dependencies into current or target directory.` +
+  `(will modify your "package.json" if the directory is under Git VC)`,
+  function (yargs) {
+    argv = yargs.usage('Usage: $0 install [target-dir]')
+      .help('help')
+      .alias('help', 'h')
+      .argv;
+  })
   .command('install',
-  'Install digs-dev\'s dependencies into current or target directory',
+  `Performs both an "upgrade" and a "symlink"`,
   function (yargs) {
     argv = yargs.usage('Usage: $0 install [target-dir]')
       .help('help')
@@ -39,16 +50,13 @@ var argv = yargs
       yargs.showHelp();
       return true;
     }
-    let command = argv._[0];
-    if (digsDev[command]) {
+    if (execute[argv._[0]]) {
       return true;
     }
     throw new Error('Command is required!');
   })
   .argv;
 
-let command = argv._[0];
-if (command) {
-  digsDev[command](argv);
-}
+execute(argv._[0], argv);
+
 

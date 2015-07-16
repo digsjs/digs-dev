@@ -18,12 +18,20 @@
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
     "bluebird": "^2.9.30",
+    "chalk": "^1.1.0",
+    "child-process-promise": "^1.1.0",
+    "debug": "^2.2.0",
+    "mkdirp": "^0.5.1",
+    "node-emoji": "^1.0.3",
+    "semver": "^5.0.1",
+    "which": "^1.1.1",
+    "yargs": "^3.14.0"
+  },
+  "devDependencies": {
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
-    "child-process-promise": "^1.1.0",
     "codacy-coverage": "^1.1.2",
     "codeclimate-test-reporter": "^0.1.0",
-    "debug": "^2.2.0",
     "eslint": "^0.24.0",
     "grunt": "^0.4.5",
     "grunt-bump": "^0.3.1",
@@ -36,17 +44,11 @@
     "istanbul-harmony": "^0.3.16",
     "jit-grunt": "^0.9.1",
     "load-grunt-config": "^0.17.1",
-    "loggy": "^0.2.0",
-    "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
-    "npm-version": "^1.1.0",
     "rewire": "^2.3.4",
-    "semver": "^4.3.6",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0",
-    "time-grunt": "^1.2.1",
-    "which": "^1.1.1",
-    "yargs": "^3.14.0"
+    "time-grunt": "^1.2.1"
   },
   "bin": {
     "digs-dev": "./bin/digs-dev.js"
@@ -71,7 +73,7 @@
     }
   },
   "engines": {
-    "npm": ">=3.0.0",
-    "node": ">=2.0.1"
+    "node": ">=2.0.1",
+    "npm": ">=3.0.0"
   }
 }
