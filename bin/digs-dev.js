@@ -11,8 +11,8 @@ var argv = yargs
   .usage('Usage: $0 <command>')
   .command('symlink',
   `Symlink digs-dev's dotfiles into current or target directory`,
-  function (yargs) {
-    argv = yargs
+  function symlink(y) {
+    argv = y
       .usage('Usage: $0 symlink [target-dir]')
       .help('help')
       .alias('help', 'h')
@@ -21,16 +21,16 @@ var argv = yargs
   .command('upgrade',
   `Install/upgrades digs-dev's dependencies into current or target directory.` +
   `(will modify your "package.json" if the directory is under Git VC)`,
-  function (yargs) {
-    argv = yargs.usage('Usage: $0 install [target-dir]')
+  function upgrade(y) {
+    argv = y.usage('Usage: $0 install [target-dir]')
       .help('help')
       .alias('help', 'h')
       .argv;
   })
   .command('install',
   `Performs both an "upgrade" and a "symlink"`,
-  function (yargs) {
-    argv = yargs.usage('Usage: $0 install [target-dir]')
+  function install(y) {
+    argv = y.usage('Usage: $0 install [target-dir]')
       .help('help')
       .alias('help', 'h')
       .argv;
@@ -41,16 +41,16 @@ var argv = yargs
     example: '$0 --help [command]',
     type: 'string'
   })
-  .version(function () {
+  .version(function getVersion() {
     return require(path.join(__dirname, '..', 'package.json')).version;
   })
   .showHelpOnFail(true)
-  .check(function (argv) {
-    if (argv.hasOwnProperty('help')) {
+  .check(function check(finalArgv) {
+    if (finalArgv.hasOwnProperty('help')) {
       yargs.showHelp();
       return true;
     }
-    if (execute[argv._[0]]) {
+    if (execute[finalArgv._[0]]) {
       return true;
     }
     throw new Error('Command is required!');
