@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function gruntfile (grunt) {
+module.exports = function gruntfile(grunt) {
   let loadGruntConfig = require('load-grunt-config');
   let pkg = grunt.file.readJSON('package.json');
   let digsDevPkg;
@@ -17,7 +17,10 @@ module.exports = function gruntfile (grunt) {
   let data = {
     pkg: pkg,
     author: typeof pkg.author === 'string' ? pkg.author :
-      [pkg.author.name, pkg.author.email].join(' '),
+      [
+        pkg.author.name,
+        pkg.author.email
+      ].join(' '),
     digsDevPkg: digsDevPkg
   };
 
@@ -27,8 +30,8 @@ module.exports = function gruntfile (grunt) {
      * Normalizes `author` field of `package.json`.
      * @returns {string} Author name(s) and email(s)
      */
-    get: function author () {
-      function _author (auth) {
+    get: function author() {
+      function _author(auth) {
         var format;
         if (typeof auth === 'string') {
           return auth;
@@ -38,7 +41,7 @@ module.exports = function gruntfile (grunt) {
       }
 
       if (Array.isArray(pkg.author)) {
-        return pkg.author.map(function makeAuthor (auth) {
+        return pkg.author.map(function makeAuthor(auth) {
           return _author(auth);
         }).join(', ');
       }
@@ -51,7 +54,7 @@ module.exports = function gruntfile (grunt) {
   }
 
   grunt.registerTask('watch-digs-dev', ['concurrent:watch-digs-dev']);
-
+  
   loadGruntConfig(grunt, {
     jitGrunt: {
       staticMappings: {
