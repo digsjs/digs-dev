@@ -6,6 +6,9 @@ let yargs = require('yargs');
 let path = require('path');
 let execute = require('../lib');
 
+// note to self: "var" is intended here
+var argv;
+
 function commandYargs(y, name, options) {
   options = options || '[target-dir]';
   return y.usage(`Usage: $0 ${name} ${options}`)
@@ -14,8 +17,7 @@ function commandYargs(y, name, options) {
     .argv;
 }
 
-// note to self: "var" is intended here
-var argv = yargs
+argv = yargs
   .usage('Usage: $0 <command>')
   .command('symlink',
   `Symlink digs-dev's dotfiles into current or target directory`,
