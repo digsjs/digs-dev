@@ -8,4 +8,4 @@ production:
     semver: false
     packages:
       dependencies: true
-      devDependencies: true
+      devDependencies: false
