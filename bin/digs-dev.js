@@ -6,34 +6,37 @@ let yargs = require('yargs');
 let path = require('path');
 let execute = require('../lib');
 
+function commandYargs(y, name, options) {
+  options = options || '[target-dir]';
+  return y.usage(`Usage: $0 ${name} ${options}`)
+    .help('help')
+    .alias('help', 'h')
+    .argv;
+}
+
 // note to self: "var" is intended here
 var argv = yargs
   .usage('Usage: $0 <command>')
   .command('symlink',
   `Symlink digs-dev's dotfiles into current or target directory`,
   function symlink(y) {
-    argv = y
-      .usage('Usage: $0 symlink [target-dir]')
-      .help('help')
-      .alias('help', 'h')
-      .argv;
+    argv = commandYargs(y, 'symlink');
   })
   .command('upgrade',
   `Install/upgrades digs-dev's dependencies into current or target directory.` +
   `(will modify your "package.json" if the directory is under Git VC)`,
   function upgrade(y) {
-    argv = y.usage('Usage: $0 install [target-dir]')
-      .help('help')
-      .alias('help', 'h')
-      .argv;
+    argv = commandYargs(y, 'upgrade');
   })
   .command('install',
-  `Performs both an "upgrade" and a "symlink"`,
+  `Performs an "upgrade", "symlink" & "gitignore"`,
   function install(y) {
-    argv = y.usage('Usage: $0 install [target-dir]')
-      .help('help')
-      .alias('help', 'h')
-      .argv;
+    argv = commandYargs(y, 'install');
+  })
+  .command('gitignore',
+  `Updates .gitignore to include all symlinked files`,
+  function gitignore(y) {
+    argv = commandYargs(y, 'gitignore');
   })
   .option('help', {
     alias: 'h',
