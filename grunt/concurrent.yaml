@@ -1,7 +1,0 @@
-watch-digs-dev:
-  tasks:
-    - watch:digs-dev-modules
-    - watch:digs-dev-files
-    - watch:digs-dev-package
-  options:
-    logConcurrentOutput: true
