@@ -64,7 +64,6 @@
         ".editorconfig",
         ".eslintignore",
         ".eslintrc",
-        ".gitattributes",
         "Gruntfile.js",
         "grunt/bump.yaml",
         "grunt/concurrent.yaml",
