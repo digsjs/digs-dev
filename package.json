@@ -68,7 +68,6 @@
         "grunt/devUpdate.yaml",
         "grunt/digs-dev.js",
         "grunt/mocha_istanbul.yaml",
-        "grunt/testfile.js",
         "grunt/watch.yaml",
         "test/.eslintrc",
         "test/fixture.js"
