@@ -53,8 +53,6 @@ module.exports = function gruntfile(grunt) {
     require('time-grunt')(grunt);
   }
 
-  grunt.registerTask('watch-digs-dev', ['concurrent:watch-digs-dev']);
-  
   loadGruntConfig(grunt, {
     jitGrunt: {
       staticMappings: {
