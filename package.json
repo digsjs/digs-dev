@@ -65,7 +65,6 @@
         ".eslintrc",
         "Gruntfile.js",
         "grunt/bump.yaml",
-        "grunt/concurrent.yaml",
         "grunt/devUpdate.yaml",
         "grunt/digs-dev.js",
         "grunt/mocha_istanbul.yaml",
