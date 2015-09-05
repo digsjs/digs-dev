@@ -8,4 +8,4 @@ global.sinon = require('sinon');
 chai.use(require('sinon-chai'));
 chai.use(require('chai-as-promised'));
 
-require('digs-utils/promise').longStackTraces();
+require('bluebird').longStackTraces();
