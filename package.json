@@ -63,6 +63,7 @@
         ".editorconfig",
         ".eslintignore",
         ".eslintrc",
+        ".wallaby.js",
         "Gruntfile.js",
         "grunt/bump.yaml",
         "grunt/devUpdate.yaml",
