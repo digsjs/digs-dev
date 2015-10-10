@@ -1,6 +1,6 @@
 {
   "name": "digs-dev",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Common development dependencies for digs",
   "repository": {
     "type": "git",
