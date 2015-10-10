@@ -215,7 +215,9 @@ rules:
     -
       before: false
       after: true
-  semi: 2
+  semi:
+    - 2
+    - always
   sort-vars: 0
   space-after-keywords:
     - 2
