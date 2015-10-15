@@ -7,6 +7,7 @@ let path = require('path');
 let execute = require('../lib');
 
 // note to self: "var" is intended here
+/* eslint no-var:0 */
 var argv;
 
 function commandYargs(y, name, options) {
