@@ -209,7 +209,7 @@ rules:
     - never
   quote-props: 0
   quotes: 0
-  require-jsdoc: 1
+  require-jsdoc: 0
   id-match: 0
   semi-spacing:
     - 2
