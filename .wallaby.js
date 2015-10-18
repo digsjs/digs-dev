@@ -3,7 +3,8 @@
 module.exports = function wallabyConfig() {
   return {
     files: [
-      'lib/**/*.js'
+      'lib/**/*.js',
+      'package.json'
     ],
     tests: [
       'test/**/*.spec.js'
