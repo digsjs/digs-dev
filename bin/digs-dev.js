@@ -64,5 +64,3 @@ argv = yargs
   .argv;
 
 execute(argv._[0], argv);
-
-
