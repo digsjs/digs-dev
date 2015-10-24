@@ -238,8 +238,10 @@ rules:
   spaced-comment: 1
   wrap-regex: 0
 
-  # es6 TODO
-  arrow-parens: 0
+  # es6
+  arrow-parens:
+    - 1
+    - as-needed
   arrow-spacing: 2
   no-var: 2
   prefer-arrow-callback: 1
