@@ -9,3 +9,10 @@ production:
     packages:
       dependencies: true
       devDependencies: false
+auto:
+  options:
+    server: true
+    packages:
+      devDependencies: false
+      dependencies: true
+    updateType: force
