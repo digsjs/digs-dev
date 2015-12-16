@@ -17,7 +17,7 @@
   "main": "lib/index.js",
   "homepage": "https://github.com/digsjs/digs-dev#readme",
   "dependencies": {
-    "bluebird": "^3.0.5",
+    "bluebird": "^3.1.1",
     "chalk": "^1.1.1",
     "child-process-promise": "^1.1.0",
     "debug": "^2.2.0",
