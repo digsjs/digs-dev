@@ -20,7 +20,7 @@
     "bluebird": "^3.0.5",
     "chalk": "^1.1.1",
     "child-process-promise": "^1.1.0",
-    "debug": "^2.2.0",
+    "debug": "^2.4.0",
     "gitignore-parser": "0.0.2",
     "graceful-fs": "^4.1.2",
     "lodash": "^3.10.1",
